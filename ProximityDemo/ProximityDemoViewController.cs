@@ -80,28 +80,27 @@ namespace ProximityDemo {
 			var args = (BeaconFoundEventArgs)e;
 			var beacon = args.Beacon;
 
-			var labelText = string.Format("Major: {0}, Minor: {1}",beacon.Major, beacon.Minor);
-
+			var beaconProximity = string.Empty;
 			// calculate and set new y position
 			switch (beacon.Proximity){
 				case CLProximity.Unknown:
-					labelText = string.Format("{0}, Region: {1}", labelText, @"Unknown");
+					beaconProximity = @"Unknown";
 					break;
 				case CLProximity.Immediate:
-					labelText = string.Format("{0}, Region: {1}", labelText, @"Immediate");
+					beaconProximity = @"Immediate";
 					break;
 				case CLProximity.Near:
-						labelText = string.Format("{0}, Region: {1}", labelText, @"Near");
+					beaconProximity = @"Near";
 					break;
 				case CLProximity.Far:
-							labelText = string.Format("{0}, Region: {1}", labelText, @"Far");
+					beaconProximity = @"Far";
 					break;
 
 				default:
 					break;
 			}
-
-			distanceLabel.Text = labelText;
+			distanceLabel.Lines = 0;
+			distanceLabel.Text = string.Format("Major: {0}, \nMinor: {1} \nRegion: {2}",beacon.Major, beacon.Minor, beaconProximity);
 
 		}
 
