@@ -408,7 +408,7 @@ namespace EstimoteSDK {
 
 	[BaseType (typeof (CLBeaconRegion))]
 	public partial interface ESTBeaconRegion{
-		[Export("initWithProximityUUID:")]
+		[Export("initWithProximityUUID:identifier:")]
 		IntPtr Constructor(NSUuid proximityUUID, NSString identifier);
 	}
 }
