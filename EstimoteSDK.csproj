@@ -53,5 +53,6 @@
     <Compile Include="libEstimoteSDK.linkwith.cs">
       <DependentUpon>libEstimoteSDK.a</DependentUpon>
     </Compile>
+    <Compile Include="Extras.cs" />
   </ItemGroup>
 </Project>

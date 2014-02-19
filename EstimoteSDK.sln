@@ -3,18 +3,54 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EstimoteSDK", "EstimoteSDK.csproj", "{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProximityDemo", "ProximityDemo\ProximityDemo.csproj", "{29EB2787-2288-4278-89AC-737225099FE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.AppStore|iPhone.Build.0 = Debug|Any CPU
 		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
 		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Release|iPhone.Build.0 = Release|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0FBB4DB7-C422-44AD-B7F3-232C2B0DA5BA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{29EB2787-2288-4278-89AC-737225099FE6}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.Debug|iPhone.Build.0 = Debug|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Release|iPhone.ActiveCfg = Release|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.Release|iPhone.Build.0 = Release|iPhone
+		{29EB2787-2288-4278-89AC-737225099FE6}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{29EB2787-2288-4278-89AC-737225099FE6}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = EstimoteSDK.csproj
+		StartupItem = ProximityDemo\ProximityDemo.csproj
 	EndGlobalSection
 EndGlobal
