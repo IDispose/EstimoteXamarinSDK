@@ -12,15 +12,9 @@ namespace ProximityDemo
 	[Register ("ProximityDemoViewController")]
 	partial class ProximityDemoViewController
 	{
-		[Outlet]
-		MonoTouch.UIKit.UILabel distanceLabel { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (distanceLabel != null) {
-				distanceLabel.Dispose ();
-				distanceLabel = null;
-			}
 		}
 	}
 }

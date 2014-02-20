@@ -410,5 +410,11 @@ namespace EstimoteSDK {
 	public partial interface ESTBeaconRegion{
 		[Export("initWithProximityUUID:identifier:")]
 		IntPtr Constructor(NSUuid proximityUUID, NSString identifier);
+
+		[Export("initWithProximityUUID:major:identifier:")]
+		IntPtr Constructor(NSUuid proximityUUID, NSNumber major, NSString identifier);
+
+		[Export("initWithProximityUUID:major:minor:identifier:")]
+		IntPtr Constructor(NSUuid proximityUUID, NSNumber major, NSNumber minor, NSString identifier);
 	}
 }

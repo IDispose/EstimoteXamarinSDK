@@ -11,6 +11,22 @@ namespace ProximityDemo {
 	[Register("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate {
 		// class-level declarations
+
+		private MonoTouch.Dialog.RootElement Root {
+			get;
+			set;
+		}
+
+		private MonoTouch.Dialog.DialogViewController RootDVC {
+			get;
+			set;
+		}
+
+		private UINavigationController RootNav {
+			get;
+			set;
+		}
+
 		public override UIWindow Window {
 			get;
 			set;
@@ -29,6 +45,28 @@ namespace ProximityDemo {
 		}
 		// This method is called when the application is about to terminate. Save data, if needed.
 		public override void WillTerminate(UIApplication application) {
+		}
+
+		private BeaconFinder MyBeaconFinder {
+			get;
+			set;
+		}
+		public override void FinishedLaunching(UIApplication application) {
+			// NOTE: Don't call the base implementation on a Model class
+			// see http://docs.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events
+			SetupDVC();
+			this.MyBeaconFinder = new BeaconFinder(this.RootDVC);
+
+			this.Window.RootViewController = this.RootNav;
+			this.Window.MakeKeyAndVisible();
+
+		}
+
+		private void SetupDVC(){
+			this.Root = new MonoTouch.Dialog.RootElement("Estimote Beacons"){ new MonoTouch.Dialog.Section() };
+			this.RootDVC = new MonoTouch.Dialog.DialogViewController(UITableViewStyle.Plain, this.Root);
+			this.RootNav = new UINavigationController(this.RootDVC);
+
 		}
 	}
 }

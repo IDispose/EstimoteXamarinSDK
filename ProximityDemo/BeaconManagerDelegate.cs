@@ -5,10 +5,6 @@ namespace ProximityDemo {
 
 		public event EventHandler BeaconFound;
 
-		public EstimoteSDK.ESTBeacon SelectedBeacon {
-			get;
-			private set;
-		}
 
 		public BeaconManagerDelegate() {
 		}
@@ -19,20 +15,10 @@ namespace ProximityDemo {
 
 			if(beacons.Count > 0) {
 
-				if(this.SelectedBeacon == null) {
-					// initialy pick closest beacon
-					this.SelectedBeacon = beacons.GetItem<EstimoteSDK.ESTBeacon>(0);// [beacons objectAtIndex:0];
-				} else {
-					for(int i = 0; i < beacons.Count; i++) {
-						var beacon = beacons.GetItem<EstimoteSDK.ESTBeacon>(i);
-						if((SelectedBeacon.Major == beacon.Major) &&
-							(SelectedBeacon.Minor == beacon.Minor)) {
-							SelectedBeacon = beacon;
-							break;
-						}
-					}
+				for(int i = 0; i < beacons.Count; i++) {
+					var beacon = beacons.GetItem<EstimoteSDK.ESTBeacon>(i);
+					OnBeaconFound(new BeaconFoundEventArgs(beacon));
 				}
-				OnBeaconFound(new BeaconFoundEventArgs(this.SelectedBeacon));
 			}
 		}
 

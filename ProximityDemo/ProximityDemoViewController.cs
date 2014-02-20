@@ -41,10 +41,29 @@ namespace ProximityDemo {
 
 		public override void ViewDidLoad() {
 			base.ViewDidLoad();
-			
+
 			// Perform any additional setup after loading the view, typically from a nib.
+
 			SetupEstimote();
 		}
+			
+		public override void ViewWillAppear(bool animated) {
+			base.ViewWillAppear(animated);
+		}
+
+		public override void ViewDidAppear(bool animated) {
+			base.ViewDidAppear(animated);
+		}
+
+		public override void ViewWillDisappear(bool animated) {
+			base.ViewWillDisappear(animated);
+		}
+
+		public override void ViewDidDisappear(bool animated) {
+			base.ViewDidDisappear(animated);
+		}
+
+		#endregion
 
 		private void SetupEstimote(){
 			// setup Estimote beacon manager
@@ -80,47 +99,34 @@ namespace ProximityDemo {
 			var args = (BeaconFoundEventArgs)e;
 			var beacon = args.Beacon;
 
+			var beaconProximity = GetProximityText(beacon.Proximity);
+
+			//distanceLabel.Text = string.Format("Major: {0}, \nMinor: {1} \nRegion: {2}",beacon.Major, beacon.Minor, beaconProximity);
+
+		}
+
+		private string GetProximityText(CLProximity proximity){
 			var beaconProximity = string.Empty;
 			// calculate and set new y position
-			switch (beacon.Proximity){
-				case CLProximity.Unknown:
-					beaconProximity = @"Unknown";
-					break;
-				case CLProximity.Immediate:
-					beaconProximity = @"Immediate";
-					break;
-				case CLProximity.Near:
-					beaconProximity = @"Near";
-					break;
-				case CLProximity.Far:
-					beaconProximity = @"Far";
-					break;
+			switch (proximity){
+			case CLProximity.Unknown:
+				beaconProximity = @"Unknown";
+				break;
+			case CLProximity.Immediate:
+				beaconProximity = @"Immediate";
+				break;
+			case CLProximity.Near:
+				beaconProximity = @"Near";
+				break;
+			case CLProximity.Far:
+				beaconProximity = @"Far";
+				break;
 
-				default:
-					break;
+			default:
+				break;
 			}
-			distanceLabel.Lines = 0;
-			distanceLabel.Text = string.Format("Major: {0}, \nMinor: {1} \nRegion: {2}",beacon.Major, beacon.Minor, beaconProximity);
-
+			return beaconProximity;
 		}
-
-		public override void ViewWillAppear(bool animated) {
-			base.ViewWillAppear(animated);
-		}
-
-		public override void ViewDidAppear(bool animated) {
-			base.ViewDidAppear(animated);
-		}
-
-		public override void ViewWillDisappear(bool animated) {
-			base.ViewWillDisappear(animated);
-		}
-
-		public override void ViewDidDisappear(bool animated) {
-			base.ViewDidDisappear(animated);
-		}
-
-		#endregion
 	}
 }
 
